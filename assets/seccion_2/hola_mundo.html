@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hola Mundo</title>
+</head>
+<body>
+
+<div id="app">
+    Usted ha conquistado {{contadorMundos}} Mundos
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            contadorMundos: 1
+        }
+    });
+</script>
+</body>
+</html>

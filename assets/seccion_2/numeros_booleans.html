@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Números y Booleans</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{ numero + 10}}</h1>
+    <h1> {{ esActivo ? 'Esta activado :)' : 'No esta activado :('}}</h1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            numero: 5,
+            esActivo: false
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding Parte 1</title>
+</head>
+<body>
+<div>
+<h1>...</h1>
+<input type="text">
+</div>
+
+<script>
+    const input = document.querySelector('input');
+    const h1 = document.querySelector('h1');
+
+    input.addEventListener('keyup', function () {
+        h1.innerHTML = input.value
+        input.value = input.value.toUpperCase();
+
+    });
+</script>
+</body>
+</html>

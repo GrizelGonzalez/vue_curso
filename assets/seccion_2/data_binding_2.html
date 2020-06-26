@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding Parte 2</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{ entrada }}</h1>
+    <input type="text" v-model="entrada">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            entrada:''
+        }
+    })
+</script>
+</body>
+</html>

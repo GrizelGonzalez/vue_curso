@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding Parte 3</title>
+</head>
+<body>
+<div id="app">
+    <h2>Dar Click</h2>
+    <a :href="urlF" target="_blank">Facebook</a> <br/>
+    <a :href="urlG" target="_blank">Google</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            urlF:'https://www.facebook.com/?stype=lo&jlou=AfcSdxIVHerQ5oADktsw9xpsRFyXg_WzY89Z8fHgBQmUOHz5Rb6sT0OEixm7y1ScDSeY7Dzxx9a0yZdLTSgGNJoK-5-VXymnHAckIg-JSjdq6Q&smuh=19660&lh=Ac-l6Fh1vRxVH6Rr',
+            urlG:'https://www.google.com/'
+
+        }
+    })
+</script>
+
+</body>
+</html>

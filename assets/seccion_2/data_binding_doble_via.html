@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding de doble vía</title>
+</head>
+<body>
+<div id="app">
+    <form action="">
+    <input type="text" v-model="options"><br/>
+    <input type="checkbox" value="opcion-1" v-model="options">Opción 1
+    <input type="checkbox" value="opcion-2" v-model="options">Opción 2
+    <input type="checkbox" value="opcion-3" v-model="options">Opción 3
+        <p>Usted a seleccionado {{ options.join(', ')}}</p>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            options: []
+        }
+    });
+</script>
+</body>
+</html>

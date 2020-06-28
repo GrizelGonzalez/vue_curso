@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matriz con notación de índice</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(animal, i) in animalsName">
+        El nombre del perro es {{ animal }} y tiene {{ age[i] }} años
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            animalsName:['Chueco','Rambo','Tachi'],
+            age:[5,3,2]
+        }
+    });
+</script>
+</body>
+</html>

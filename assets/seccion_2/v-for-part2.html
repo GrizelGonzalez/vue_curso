@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <ul>
+                <li v-for="(value, key, index) in animales">
+                    {{ index +1 }}. El {{ key }} hace {{ value }}.
+                </li>
+            </ul>
+            <ul>
+                <li v-for="({title, type}, index) in peliculas" :key="index">
+                    {{index + 1}}. La pelicula {{ title }} es del genero {{ type }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    peliculas: [ // array
+                        { title: 'matrix', type: 'suspenso' }, // item0: { key: value, key: value  }
+                        { title: 'cenicienta', type: 'fantasia' } // item1: { key: value, key: value }
+                    ],
+                    animales: { //object
+                        perro: 'Foo', // key: value
+                        gato: 'Bar', // key: value
+                        pajaro: 'wet' // key: value
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

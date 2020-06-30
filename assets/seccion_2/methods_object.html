@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>El Objeto Methods</title>
+</head>
+<body>
+<div id="app">
+    {{ mostrarTitulo() }}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        methods:{
+            mostrarTitulo:function () {
+                return 'Hola mundo desde Methods';
+            }
+        }
+    });
+</script>
+</body>
+</html>

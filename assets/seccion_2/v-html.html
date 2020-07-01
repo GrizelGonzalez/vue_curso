@@ -7,22 +7,22 @@
 <body>
 <div id="app">
     <div>
-    <h1>Uso de la directiva v-html</h1>
-    <p v-html="enlaceHTML"></p>
+        <h1>Uso de la directiva v-html</h1>
+        <p v-html="enlaceHTML"></p>
 
-    </div>
-    <div>
-        <p v-html="enlacePrinterest"></p>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     new Vue({
-        el:'#app',
-        data:{
-            enlaceHTML:'${<a href="https://www.instagram.com/" target="_blank">Instagram</a>}',
-            enlacePrinterest: '<a href="https://www.pinterest.com.mx/" target="_blank">Pinterest</a>'
+        el: '#app',
+        data: {
+            enlaceHTML: `<ul>
+                            <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                            <li><a href="https://www.pinterest.com.mx/" target="_blank">Pinterest</a></li>
+                        </ul>`,
+            //enlacePrinterest: '<a href="https://www.pinterest.com.mx/" target="_blank">Pinterest</a>'
         }
     });
 </script>

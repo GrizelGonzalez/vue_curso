@@ -8,7 +8,7 @@
 <div id="app">
     <div>
         <h1>Uso de la directiva v-html</h1>
-        <p v-html="enlaceHTML"></p>
+        <div v-html="enlaceHTML"></div>
 
     </div>
 </div>
@@ -21,8 +21,7 @@
             enlaceHTML: `<ul>
                             <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
                             <li><a href="https://www.pinterest.com.mx/" target="_blank">Pinterest</a></li>
-                        </ul>`,
-            //enlacePrinterest: '<a href="https://www.pinterest.com.mx/" target="_blank">Pinterest</a>'
+                        </ul>`
         }
     });
 </script>

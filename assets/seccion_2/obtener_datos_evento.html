@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obtener datos de los eventos</title>
+</head>
+<body>
+<div id="app">
+    <h1>Obtener Datos de los Eventos</h1>
+    <p v-on:mousemove="actualizarValor">
+        Valor de X {{ x }} <br>
+        Valor de Y {{ y }}
+    </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            x:0,
+            y:0
+        },
+        methods:{
+            actualizarValor:function (event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            }
+        }
+    });
+</script>
+</body>
+</html>

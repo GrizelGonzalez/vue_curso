@@ -11,9 +11,10 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     Vue.filter('capitalize', function (string) {
-        var firstCharacter = string.charAt(0).toUpperCase();
-        var lestCharacter = string.slice(1,string.length);
-        return firstCharacter +  lestCharacter;
+        //var firstCharacter = string.charAt(0).toUpperCase();
+        //var lestCharacter = string.slice(1,string.length);
+        var [firstCharacter, ...lestCharacter] = string;
+        return firstCharacter.toUpperCase() + lestCharacter.join('');
     });
 
     new Vue({

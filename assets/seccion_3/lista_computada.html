@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordenar Lista con Propiedad Computada</title>
+</head>
+<body>
+<div id="app">
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Pais</th>
+            <th>Electricidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for='presa in presasPorElectricidad'>
+            <td> {{ presa.nombre }}</td>
+            <td> {{ presa.pais }}</td>
+            <td> {{ presa.electricidad }} MegaWatts</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            presas:[
+                {nombre:'Represa Nurek', pais:'Taijikistan', electricidad:32000},
+                {nombre:'Represa Tres gargantas', pais:'China', electricidad:22500},
+                {nombre:'Represa Tarbela', pais:'Pakistan', electricidad:3500},
+                {nombre:'Represa Guri', pais:'Venezuela', electricidad:10200}
+            ]
+        },
+        computed:{
+            presasPorElectricidad(){
+                return this.presas.sort((d1, d2) => d2.electricidad - d1.electricidad);
+            }
+        }
+    })
+</script>
+</body>
+</html>

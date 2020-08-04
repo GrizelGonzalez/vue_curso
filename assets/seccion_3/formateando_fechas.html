@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formateando Fechas con Filtros</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.js"></script>
+<div id="app">
+La revolución francesa fue en: {{ fechaRevFranc }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.filter('fecha', function (date) {
+        return moment(date).format('LLL')
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            fechaRevFranc:'1789-05-05 17h'
+        }
+    });
+</script>
+</body>
+</html>

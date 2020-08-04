@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Propiedad Computada o Calculada</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="nombre">
+    <input type="text" id="apellido" value="Snow">
+    <button v-on:click="guardApellido">Guardar apellido</button>
+    <output> {{ computedFullName}}</output>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+let apellido = 'Snow'
+    new Vue({
+        el:'#app',
+        data:{
+            nombre:'John'
+        },
+        computed:{
+            computedFullName(){
+                return this.nombre + ' ' + apellido
+            }
+        },
+        methods:{
+            guardApellido(){
+                apellido = this.$el.querySelector('#apellido').value
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Observables</title>
+</head>
+<body>
+<div id="app">
+    Grover se encuentra {{ esActivo === 'activo' ? 'Activo' : 'no Activo'}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            esActivo: 'activo'
+        },
+        watch:{
+            esActivo:function () {
+                console.log('Cambió el valor de estado');
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -8,6 +8,7 @@
 <body>
 <div id="lista-utiles">
     <h1>{{ header.toLocaleUpperCase()}}</h1>
+    <input type="text" placeholder="Agregar nuevo" v-model="newUtil">
     <ul>
         <li v-for="lista in utiles">{{ lista }}</li>
     </ul>
@@ -19,6 +20,7 @@
         el:'#lista-utiles',
        data: {
             header:'Lista de Utiles',
+           newUtil: '',
            utiles: [
                '10 cuadernos',
                '15 lapices',

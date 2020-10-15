@@ -8,14 +8,19 @@
 <body>
 <div class="container">
 <div id="lista-utiles">
+    <div class="header">
     <h1>{{ header.toLocaleUpperCase()}}</h1>
-    <div>
+        <button  v-if="estado === 'default'" class="btn btn-primary" @click="cambiarEstado('edit')">Agregar</button>
+        <button  v-else class="btn btn-secondary" @click="cambiarEstado('default')">Cancelar</button>
+    </div>
+    <div v-if="estado === 'edit'">
         <input type="text" placeholder="Agregar nuevo" v-model="newUtil" @keyup.enter="guardarElemento">
-        <button class="btn btn-primary" @click="guardarElemento">Agregar elemento</button>
+        <button class="btn btn-primary" @click="guardarElemento">Guardar</button>
     </div>
     <ul>
         <li v-for="lista in utiles">{{ lista }}</li>
     </ul>
+    <p v-if="utiles.length === 0">No existen elementos en la lista</p>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -25,17 +30,22 @@
        data: {
             header:'Lista de Utiles',
            newUtil: '',
+           estado: 'default',
            utiles: [
-               '10 cuadernos',
+               /*'10 cuadernos',
                '15 lapices',
-               '5 cajas de colores'
+               '5 cajas de colores'*/
            ]
        },
        methods: {
             guardarElemento: function() {
                 this.utiles.push(this.newUtil);
                 this.newUtil = '';
-            }
+            },
+           cambiarEstado: function (newEstado) {
+                this.estado = newEstado;
+                this.newUtil = '';
+           }
        }
     });
 </script>

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
 <div id="lista-utiles">
     <h1>{{ header.toLocaleUpperCase()}}</h1>
     <div>
@@ -16,7 +17,7 @@
         <li v-for="lista in utiles">{{ lista }}</li>
     </ul>
 </div>
-
+</div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
    var app = new Vue({
@@ -33,6 +34,7 @@
        methods: {
             guardarElemento: function() {
                 this.utiles.push(this.newUtil);
+                this.newUtil = '';
             }
        }
     });

@@ -43,6 +43,11 @@
                comprado: false
            }]
        },
+       computed: {
+            listaReversa: function (){
+                return this.newUtil.length;
+            }
+       },
        methods: {
             guardarElemento: function() {
                 this.utiles.push({
